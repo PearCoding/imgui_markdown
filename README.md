@@ -8,7 +8,7 @@ Support development of imgui_markdown through [GitHub Sponsors](https://github.c
 
 A permissively licensed markdown single-header library for [Dear ImGui](https://github.com/ocornut/imgui).
 
-Requires C++11 or above
+Requires C++17 or above
 
 imgui_markdown currently supports the following markdown functionality:
 

@@ -34,7 +34,7 @@ Markdown for Dear ImGui
 
 A permissively licensed markdown single-header library for https://github.com/ocornut/imgui
 
-Currently requires C++11 or above
+Currently requires C++17 or above
 
 imgui_markdown currently supports the following markdown functionality:
  - Wrapped text
@@ -525,7 +525,6 @@ namespace ImGui
     inline void Markdown( const char* markdown_, size_t markdownLength_, const MarkdownConfig& mdConfig_ )
     {
         static const char* linkHoverStart = NULL; // we need to preserve status of link hovering between frames
-        ImGuiStyle& style = ImGui::GetStyle();
         Line        line;
         Link        link;
         Emphasis    em;
@@ -728,6 +727,7 @@ namespace ImGui
 					em.state = Emphasis::RIGHT;
 					em.text.stop = i;
                    // pass through to case Emphasis::RIGHT
+                   [[fallthrough]];
 				}
                 else
                 {
