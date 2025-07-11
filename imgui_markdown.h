@@ -758,15 +758,14 @@ namespace ImGui
 					em.state = Emphasis::RIGHT;
 					em.text.stop = i;
                    // pass through to case Emphasis::RIGHT
-                   [[fallthrough]];
+#if __cplusplus >= 201703L
+                    [[fallthrough]];
+#endif
 				}
                 else
                 {
                     break;
                 }
-            #if __cplusplus >= 201703L
-                  [[fallthrough]];
-            #endif
 			case Emphasis::RIGHT:
 				if( em.sym == c )
                 {
